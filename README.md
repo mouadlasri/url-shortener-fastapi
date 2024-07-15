@@ -37,6 +37,14 @@ This project uses PostgreSQL:
 2. Run Alembic migrations to create the necessary tables:
    2.1. alembic upgrade head
 
+## Running Tests
+
+To run the test suite:
+
+1. Create a test database named `test_url_shortener` in your PostgreSQL server.
+2. Update the `TEST_DATABASE_URL` in `tests/test_main.py` with your PostgreSQL credentials.
+3. Run the tests with:
+
 ## Project Structure
 
 The proejct is structured as follows:

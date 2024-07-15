@@ -47,6 +47,7 @@ httpcore==1.0.5
 httptools==0.6.1
 httpx==0.27.0
 idna @ file:///C:/b/abs_bdhbebrioa/croot/idna_1666125572046/work
+iniconfig==2.0.0
 isort==4.3.21
 Jinja2==3.1.4
 joblib==1.2.0
@@ -72,7 +73,7 @@ packaging==23.1
 pandas==1.5.3
 pathspec==0.11.1
 patsy==0.5.3
-pluggy @ file:///C:/ci/pluggy_1648042746254/work
+pluggy==1.5.0
 pooch==1.6.0
 protobuf==4.22.1
 psycopg2-binary==2.9.9
@@ -90,6 +91,8 @@ pyflakes==2.1.1
 Pygments==2.18.0
 pyOpenSSL @ file:///C:/b/abs_552w85x1jz/croot/pyopenssl_1677607703691/work
 PySocks @ file:///C:/ci_310/pysocks_1642089375450/work
+pytest==8.2.2
+pytest-asyncio==0.23.7
 python-dateutil==2.8.2
 python-dotenv==1.0.1
 python-multipart==0.0.9
@@ -127,6 +130,7 @@ tensorboard-plugin-wit==1.8.1
 threadpoolctl==3.1.0
 tinytag==1.9.0
 toml==0.10.2
+tomli==2.0.1
 toolz @ file:///C:/b/abs_cfvk6rc40d/croot/toolz_1667464080130/work
 tqdm @ file:///C:/b/abs_0axbz66qik/croots/recipe/tqdm_1664392691071/work
 trio==0.22.0
