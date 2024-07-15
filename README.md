@@ -43,7 +43,7 @@ The proejct is structured as follows:
 
 fastapi-url-shortener/
 │
-├── app/
+├── app/ <br />
 │ ├── init.py
 │ ├── main.py # Main FastAPI application
 │ ├── database.py # Database connection and session management
