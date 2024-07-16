@@ -1,69 +1,87 @@
-# url-shortener-fastapi
+# FastAPI URL Shortener
 
-A URL shortenner implemented using FastAPI
+A scalable URL shortening service built with FastAPI and PostgreSQL.
 
-## Installation
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setting up the Database](#setting-up-the-database)
+  - [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [API Endpoints](#api-endpoints)
+- [Running Tests](#running-tests)
+- [Why PostgreSQL?](#why-postgresql)
+
+## Project Overview
+
+This URL shortener service provides functionality to shorten long URLs into more manageable, shorter versions. It includes features like URL expiration and click tracking.
+
+## Features
+
+- Shorten long URLs to unique short keys
+- Redirect short URLs to original long URLs
+- Set expiration dates for URLs
+- Track click statistics for each shortened URL
+
+## Technology Stack
+
+- **FastAPI**
+- **PostgreSQL**
+- **SQLAlchemy**
+- **Alembic**
+- **Pydantic**
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8+
+- PostgreSQL
+
+### Setting up the Database
+
+1. Install PostgreSQL and create a new database:
+
+`CREATE DATABASE url_shortener;`
+
+2. Replace the DATABASE_URL in `app/database.py` with your PostgreSQL credentials.
+
+### Installation
 
 1. Clone the repository:
-   git clone https://github.com/mouadlasri/url-shortener-fastpi.git
-   cd url-shortener-fastapi
+   `git clone https://github.com/mouadlasri/url-shortener-fastpi.git`
+   `cd url-shortener-fastpi`
 
-2. Create and activate a virtual environment:
+2. Create a vritual environment and activate it
+   `python -m venv venv`
+   `source venv/bin/activate`
+   On Windows use `venv\Scripts\activate`
 
-python -m venv venv
-source venv/bin/activate
+3. Install the required packages:
+   `pip install -r requirements.txt`
 
-On Windows, use: venv\Scripts\activate
-On Mac, use: source venv/bin/activate
+4. Run the database migrations
+   alembic upgrade head
 
-3. Install dependencies
-   pip install -r requirements.txt
+### Running the application
 
-## Running the app
+To start teh application, run:
+`python run.py`
+The API will be available at http://localhost:8000.
 
-to run the application, use the following command: python run.py
-The api will be available at `http://localhost:8000`
+**API Endpoints**
+POST /shorten: Create a shortened URL
+GET /{short_key}: Redirect to the original URL
+GET /stats/{short_key}: Get statistics for a shortened URL
 
-## API Endpoints
+### Running Tests
 
-- POST /shorten: Create a shortened URL
-- GET /{short_key}: Redirect to the original UR
+1. Create a test database
 
-## Setting up the database
+2. Replace the TEST_DATABASE_URL in tests/test_main.py with your PostgreSQL credentials.
 
-This project uses PostgreSQL:
-
-1. Update the `DATABASE_URL` in `app/database.py` with your PostgreSQL credentials.
-2. Run Alembic migrations to create the necessary tables:
-   2.1. alembic upgrade head
-
-## Running Tests
-
-To run the test suite:
-
-1. Create a test database named `test_url_shortener` in your PostgreSQL server.
-2. Update the `TEST_DATABASE_URL` in `tests/test_main.py` with your PostgreSQL credentials.
-3. Run the tests with:
-
-## Project Structure
-
-The proejct is structured as follows:
-
-fastapi-url-shortener/
-│
-├── app/ <br />
-│ ├── init.py
-│ ├── main.py # Main FastAPI application
-│ ├── database.py # Database connection and session management
-│ ├── models.py # SQLAlchemy models
-│ ├── schemas.py # Pydantic schemas for request/response models
-│ └── utils.py # Utility functions
-│
-├── alembic/ # Database migration scripts and configuration
-│ ├── versions/
-│ └── env.py
-│
-├── alembic.ini # Alembic configuration file
-├── requirements.txt # Project dependencies
-├── README.md # Project documentation
-└── run.py # Script to run the FastAPI application
+3. Run the test:
