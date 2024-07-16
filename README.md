@@ -13,6 +13,7 @@ A scalable URL shortening service built with FastAPI and PostgreSQL.
   - [Installation](#installation)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
+- [API Documentation](#api-documentation)
 - [Running Tests](#running-tests)
 - [Why PostgreSQL?](#why-postgresql)
 
@@ -96,3 +97,17 @@ GET /stats/{short_key}: Get statistics for a shortened URL
 2. Replace the TEST_DATABASE_URL in tests/test_main.py with your PostgreSQL credentials.
 
 3. Run the test:
+
+## API Documentation
+
+FastAPI provides automatic interactive API documentation (Swagger UI) for your API endpoints.
+
+To access the Swagger documentation:
+
+1. Start the application:
+   `python run.py`
+
+2. Open a browser and go to <br />
+   `http://localhost:8000/docs`
+3. Access the documentation through the Swagger UI at: <br />
+   `http://localhost:8000/docs`
