@@ -48,34 +48,45 @@ This URL shortener service provides functionality to shorten long URLs into more
 
 `CREATE DATABASE url_shortener;`
 
-2. Replace the DATABASE_URL in `app/database.py` with your PostgreSQL credentials.
+2. Replace the `DATABASE_URL` in `app/database.py` with your PostgreSQL credentials.
 
 ### Installation
 
 1. Clone the repository:
    `git clone https://github.com/mouadlasri/url-shortener-fastpi.git`
+   <br />
    `cd url-shortener-fastpi`
 
 2. Create a vritual environment and activate it
+   <br />
    `python -m venv venv`
-   `source venv/bin/activate`
+   <br />
+   On mac use `source venv/bin/activate`
+   <br />
    On Windows use `venv\Scripts\activate`
 
 3. Install the required packages:
+   <br />
    `pip install -r requirements.txt`
 
 4. Run the database migrations
-   alembic upgrade head
+   <br />
+   `alembic upgrade head`
 
 ### Running the application
 
 To start teh application, run:
+<br />
 `python run.py`
+<br />
 The API will be available at http://localhost:8000.
 
 **API Endpoints**
+<br />
 POST /shorten: Create a shortened URL
+<br />
 GET /{short_key}: Redirect to the original URL
+<br />
 GET /stats/{short_key}: Get statistics for a shortened URL
 
 ### Running Tests
